@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <Button
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="startService"
+        android:id="@+id/startService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="startService"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="stopService"
+        android:id="@+id/stopService"
+        app:layout_constraintBottom_toTopOf="@+id/startService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Service"
+
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/boundService"
+        app:layout_constraintBottom_toTopOf="@+id/stopService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bound Service"
+
+        />
+    <Button
+        android:id="@+id/unBoundService"
+        app:layout_constraintBottom_toTopOf="@+id/boundService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UnBound Service"
+
+        />
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
