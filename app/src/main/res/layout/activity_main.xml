@@ -35,6 +35,8 @@
         tools:ignore="OnClick" />
 
     <Button
+        android:clickable="true"
+        android:onClick="boundService"
         android:id="@+id/boundService"
         app:layout_constraintBottom_toTopOf="@+id/stopService"
         android:layout_width="wrap_content"
@@ -43,11 +45,23 @@
 
         />
     <Button
+        android:clickable="true"
+        android:onClick="UnBoundedClick"
         android:id="@+id/unBoundService"
         app:layout_constraintBottom_toTopOf="@+id/boundService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UnBound Service"
+
+        />
+    <Button
+        android:clickable="true"
+        android:onClick="getRandomNumber"
+        android:id="@+id/getRandomNumber"
+        app:layout_constraintBottom_toTopOf="@+id/boundService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="getRandomNumber"
 
         />
 </LinearLayout>

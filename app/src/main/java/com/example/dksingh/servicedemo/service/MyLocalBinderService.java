@@ -17,14 +17,14 @@ public class MyLocalBinderService extends Service {
         Log.v(TAG,"local binder created");
     }
 
-    public  class MyService extends Binder{
-        public MyService getMyIBinder()
+    public  class MyServiceBinder extends Binder{
+        public MyLocalBinderService getMyService()
         {
-            return MyService.this;
+            return MyLocalBinderService.this;
         }
     }
 
-    private IBinder myIBinder=new MyService();
+    private IBinder myIBinder=new MyServiceBinder();
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -42,19 +42,28 @@ public class MyLocalBinderService extends Service {
                 {
                     try {
                         Thread.sleep(3000);
-                        Log.v(TAG,"execute"+new Random().nextInt(10)+2200);
+                        random=new Random().nextInt(10)+2200;
+                        Log.v(TAG,"random number execute"+random);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
             }
         }).start();
+
         return Service.START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        isServiceCreated=false;
         Log.v(TAG,"service destroy::::::::::::::");
+    }
+
+    Number random;
+    public int getRandomNumber()
+    {
+        return (int) random;
     }
 }
