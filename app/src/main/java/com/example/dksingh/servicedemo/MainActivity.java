@@ -82,8 +82,6 @@ boolean isServiceBound;
        unBindService();
 
     }
-    
-    
     public void getRandomNumber(View view)
     {
         if(isServiceBound) Log.v(TAG,"fetch random number"+myService.getRandomNumber());
